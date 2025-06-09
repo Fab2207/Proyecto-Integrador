@@ -137,11 +137,65 @@ public class EmpleadosDao {
         }
         return list_employees;
     }
-    
-    //Modificar empleado
-//    public boolean modificarEmpleadoQuery(Empleados employee){
-//        String query = "UPDATE employee SET nombre =?, usuario= ?,"
-//                +
-//    }
 
+    //Modificar empleado
+    public boolean modificarEmpleadoQuery(Empleados employee) {
+        String query = "UPDATE employee SET nombre =?, usuario= ?,"
+                + "direccion = ?, celular = ?, correo_electronico = ?"
+                + "rol = ?, actualizar_usuario = ?" + "WHERE id = ?";
+
+        Timestamp dateTime = new Timestamp(new Date().getTime());
+
+        try {
+            conn = cn.getConnection();
+            pst = conn.prepareStatement(query);
+            pst.setString(1, employee.getNombre());
+            pst.setString(2, employee.getUsuario());
+            pst.setString(3, employee.getDireccion());
+            pst.setString(4, employee.getCelular());
+            pst.setString(5, employee.getCorreo_electronico());
+            pst.setString(6, employee.getRol());
+            pst.setTimestamp(7, dateTime);
+            pst.setInt(8, employee.getId());
+
+            pst.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar el empleado:"
+                    + e);
+            return false;
+        }
+    }
+
+    //Eliminar Empleado
+    public boolean eliminarEmpleadoQuery(int id) {
+        String query = "DELETE FROM employees WHERE id =" + id;
+        try {
+            conn = cn.getConnection();
+            pst = conn.prepareStatement(query);
+            pst.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se puede eliminar un empleado"
+                    + "que tenga relacion con otra tabla" + e);
+            return false;
+        }
+    }
+
+    //Cambiar Contraseña
+    public boolean eliminarEmpleadoPassword(Empleados employee) {
+        String query = "UPDATE employees SET password = ? WHERE usuario ="
+                + usuario_user + "";
+        try {
+            conn = cn.getConnection();
+            pst = conn.prepareStatement(query);
+            pst.setString(1, employee.getContraseña());
+            pst.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al cambiar "
+                    + "la contraseña" + e);
+            return false;
+        }
+    }
 }
