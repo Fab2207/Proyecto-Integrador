@@ -29,7 +29,7 @@ public class EmpleadosDao {
 
     //Metodo Login
     public Empleados loginQuery(String usuario, String contraseña) {
-        String query = "SELECT*FROM empleados WHERE usuario = ? AND password = ?";
+        String query = "SELECT*FROM empleados WHERE usuario = ? AND contraseña = ?";
         Empleados employee = new Empleados();
 
         try {
@@ -140,7 +140,7 @@ public class EmpleadosDao {
 
     //Modificar empleado
     public boolean modificarEmpleadoQuery(Empleados employee) {
-        String query = "UPDATE employee SET nombre =?, usuario= ?,"
+        String query = "UPDATE empleados SET nombre =?, usuario= ?,"
                 + "direccion = ?, celular = ?, correo_electronico = ?"
                 + "rol = ?, actualizar_usuario = ?" + "WHERE id = ?";
 
@@ -169,7 +169,7 @@ public class EmpleadosDao {
 
     //Eliminar Empleado
     public boolean eliminarEmpleadoQuery(int id) {
-        String query = "DELETE FROM employees WHERE id =" + id;
+        String query = "DELETE FROM empleados WHERE id =" + id;
         try {
             conn = cn.getConnection();
             pst = conn.prepareStatement(query);
@@ -184,7 +184,7 @@ public class EmpleadosDao {
 
     //Cambiar Contraseña
     public boolean eliminarEmpleadoPassword(Empleados employee) {
-        String query = "UPDATE employees SET password = ? WHERE usuario ="
+        String query = "UPDATE empleados SET contraseña = ? WHERE usuario ="
                 + usuario_user + "";
         try {
             conn = cn.getConnection();
