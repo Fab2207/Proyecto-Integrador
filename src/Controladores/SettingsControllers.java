@@ -38,48 +38,12 @@ public class SettingsControllers implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == view.jLabel3) {
-            view.jPanelProductos.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel4) {
-            view.jPanelCompras.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel5) {
-            view.jPanelClientes.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel6) {
-            view.jPanelEmpleados.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel7) {
-            view.jPanelProveedores.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel8) {
-            view.jPanelCategorias.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel9) {
-            view.jPanelReportes.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel10) {
-            view.jPanelAjustes.setBackground(new Color(152, 202, 63));
-        } else if (e.getSource() == view.jLabel60) {
-            view.jPanelVentas.setBackground(new Color(152, 202, 63));
-        }
+        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if (e.getSource() == view.jLabel3) {
-            view.jPanelProductos.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel4) {
-            view.jPanelCompras.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel5) {
-            view.jPanelClientes.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel6) {
-            view.jPanelEmpleados.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel7) {
-            view.jPanelProveedores.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel8) {
-            view.jPanelCategorias.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel9) {
-            view.jPanelReportes.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel10) {
-            view.jPanelAjustes.setBackground(new Color(18, 45, 61));
-        } else if (e.getSource() == view.jLabel60) {
-            view.jPanelVentas.setBackground(new Color(18, 45, 61));
-        }
+       
     }
 
 }
